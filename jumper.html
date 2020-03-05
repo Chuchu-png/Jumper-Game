@@ -2,6 +2,7 @@
   <head>
     <script src = "p5.js"></script>
     <script src = "jumper.js"></script>
+    <script src = "barrierForBall.js"></script>
     
     <style>
       body {
@@ -17,6 +18,7 @@
       
       
       var jumper = new jumper(); //declare object
+       var barrier = new barrier();
       function setup() {
         createCanvas(w,h);
       }
@@ -25,7 +27,9 @@
         console.log(jumper.x, jumper.y);
         clear();
         jumper.show(); //load show
+        barrier.show();
         jumper.update(); //load update
+        barrier.update();
         
         if((keyIsDown(37)) && (jumper.x != 0)){ //left
           jumper.x -=10;
