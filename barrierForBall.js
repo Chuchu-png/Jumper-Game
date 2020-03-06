@@ -1,3 +1,5 @@
+
+
 function barrier() {
   this.width = 50; //definite width
   this.height = 200; // definite height
@@ -5,7 +7,7 @@ function barrier() {
   this.y = h -300;
   this.gravity = 0.5; // force pulls you down
   this.lift = -10; // lifts you up (opposing force of gravity)
-  this.velocity = 0; //spped of gravity force
+  this.velocity = 30; //spped of gravity force
 
 
 this.show = function() {
@@ -28,3 +30,5 @@ this.show = function() {
     }
   }
 }
+
+
