@@ -13,9 +13,11 @@
   </head>
   <body>
     <script>
+      var jumpLimit = 4;
       var w = window.innerWidth;
       var h = window.innerHeight;
       var barrierArr = [];
+      var hit = false;
       var jumper = new jumper(); //declare object
       function setup() {
         createCanvas(w,h);
@@ -31,10 +33,11 @@
         //barrier.show();
         jumper.show(); //load update
         //barrier.update();
-        
+
         for(let i = 0; i < barrierArr.length; i++) {
           barrierArr[i].show();
           barrierArr[i].update();
+          
         }
 
         if((keyIsDown(37)) && (jumper.x != 0)){ //left
@@ -48,9 +51,9 @@
       }
       
       function keyPressed() {
-        if(keyCode === 32) {
+        if(keyCode === 32 && jumper.jumpcount < jumpLimit) {
             jumper.up();
-          }
+        }
     }
     </script>
   </body>
